@@ -13,14 +13,6 @@ public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
-signals:
-  void digitouMerda();
-
-private slots:
-  void butaoClicado();
-  void textoMudou(const QString &texto);
-  void merdaFoiDigitada();
-
 private:
   Ui::MainWindow *ui;
 };
