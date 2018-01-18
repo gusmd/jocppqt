@@ -10,6 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->operatorComboBox->addItem("+");
+    ui->operatorComboBox->addItem("-");
+    ui->operatorComboBox->addItem("x");
+    ui->operatorComboBox->addItem("/");
 
     connect(ui->butao, &QPushButton::clicked, this, &MainWindow::computeResult);
 }
@@ -27,9 +30,24 @@ void MainWindow::computeResult()
 
     double result;
 
-    // ver qual a operacao (%%%)
-    // fazer n1 %%% n2
-    result = num1 + num2;
+    int currentOption = ui->operatorComboBox->currentIndex();
+    switch (currentOption) {
+    case 0: // +
+        result = num1 + num2;
+        break;
+    case 1: // -
+        result = num1 - num2;
+        break;
+    case 2: // x
+        result = num1 * num2;
+        break;
+    case 3: // division
+        result = num1 / num2;
+        break;
+    default:
+        QMessageBox::warning(this, "Erro!", "Operação Inválida!");
+        return;
+    }
 
     // Show message box with result
     QMessageBox::warning(this, "Resultado", "O resultado da sua operação é: " + QString::number(result));
