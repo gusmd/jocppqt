@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include <QDoubleValidator>
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -14,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->operatorComboBox->addItem("x");
     ui->operatorComboBox->addItem("/");
 
+    QDoubleValidator *validator = new QDoubleValidator(-10000.0, 10000.0, 3, this);
+    ui->num1Edit->setValidator(validator);
+    ui->num2Edit->setValidator(validator);
+    
     connect(ui->butao, &QPushButton::clicked, this, &MainWindow::computeResult);
 }
 
@@ -45,10 +50,10 @@ void MainWindow::computeResult()
         result = num1 / num2;
         break;
     default:
-        QMessageBox::warning(this, "Erro!", "Operação Inválida!");
+        QMessageBox::critical(this, "Erro!", "Operação Inválida!");
         return;
     }
 
     // Show message box with result
-    QMessageBox::warning(this, "Resultado", "O resultado da sua operação é: " + QString::number(result));
+    QMessageBox::information(this, "Resultado", "O resultado da sua operação é: " + QString::number(result));
 }
