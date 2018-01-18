@@ -54,6 +54,11 @@ void MainWindow::computeResult()
         return;
     }
 
+    QString msg = QString("O resultado de %0 %1 %2 é %3").arg(
+        ui->num1Edit->text(), ui->operatorComboBox->currentText(), ui->num2Edit->text(), 
+        QString::number(result));
+
+
     // Show message box with result
-    QMessageBox::information(this, "Resultado", "O resultado da sua operação é: " + QString::number(result));
+    QMessageBox::information(this, "Resultado", msg);
 }
