@@ -17,18 +17,22 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_3">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="butao">
         <property name="text">
-         <string>Operação</string>
+         <string>Calcular</string>
         </property>
        </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Quantidade de curtidas pagas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="num1Edit"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label">
@@ -39,53 +43,14 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Valor 1</string>
+         <string>Última quantidade de curtidas</string>
         </property>
        </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Valor 2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QPushButton" name="butao">
-        <property name="text">
-         <string>Calcular</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLineEdit" name="num1Edit"/>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLineEdit" name="num2Edit"/>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="operatorComboBox">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>70</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
+       <widget class="QLineEdit" name="num2Edit"/>
       </item>
-      <item row="0" column="0" colspan="4">
+      <item row="0" column="0" colspan="3">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -98,7 +63,7 @@
         </property>
        </spacer>
       </item>
-      <item row="3" column="0" colspan="4">
+      <item row="4" column="0" colspan="3">
        <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -110,6 +75,22 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Quantidade atual de curtidas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="num3Edit"/>
       </item>
      </layout>
     </item>
