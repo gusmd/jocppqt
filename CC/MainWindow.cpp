@@ -26,34 +26,29 @@ MainWindow::~MainWindow()
 void MainWindow::computeResult()
 {
     // Read numbes from fields
-    double num1 = ui->num1Edit->text().toDouble();
-    double num2 = ui->num2Edit->text().toDouble();
-	double num3 = ui->num3Edit->text().toDouble();
+    double num1 = ui->num1Edit->text().toDouble();//Ultima quantidade de curtidas
+    double num2 = ui->num2Edit->text().toDouble();//Atual quantidade de curtidas
+	double num3 = ui->num3Edit->text().toDouble();//Quantidade de curtidas pagas
 
-    double result;
+    double result, result0, result1, result2;
 
-    /*int currentOption = ui->operatorComboBox->currentIndex();
-    switch (currentOption) {
-    case 0: // +
-        result = num1 + num2;
-        break;
-    case 1: // -
-        result = num1 - num2;
-        break;
-    case 2: // x
-        result = num1 * num2;
-        break;
-    case 3: // division
-        result = num1 / num2;
-        break;
-    default:
-        QMessageBox::critical(this, "Erro!", "Operação Inválida!");
-        return;
-    }*/
+   result = num2 - num1; //Quantidade aumentou
+   result0 = ((num2 / num1) - 1) * 100; //Percentual de aumento
+   result1 = result - num3; //Curtidas Organicas
+   result2 = (result1 / result) * 100; //Percentual organicas
+   
+  // QMessageBox::critical(this, "Erro!", "Operação Inválida!");
+  //    return;
+    
 
-    QString msg = QString("O resultado de %0 %1 %2 é %3").arg(
-        ui->num1Edit->text(), ui->operatorComboBox->currentText(), ui->num2Edit->text(), 
-        QString::number(result));
+    QString msg = QString("Aumentou: %0 Curtidas" "\n"
+		"Percentual de aumento: %1%" "\n"
+		"Quantidade de curtidas Orgânicas: %2" "\n"
+		"Percentual de curtidas orgânicas: %3%").arg(
+		QString::number(result),
+		QString::number(result0, 'f', 1),
+		QString::number(result1),
+		QString::number(result2, 'f', 1));
 
 
     // Show message box with result
