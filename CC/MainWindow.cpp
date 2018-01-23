@@ -32,10 +32,10 @@ void MainWindow::computeResult()
 
     double result, result0, result1, result2;
 
-   result = num2 - num1; //Quantidade aumentou
-   result0 = ((num2 / num1) - 1) * 100; //Percentual de aumento
+   result = num2 - num1; //Quantidade que aumentou
+   result0 = ((num2 / num1) - 1) * 100; //Percentual de aumento das curtidas
    result1 = result - num3; //Curtidas Organicas
-   result2 = (result1 / result) * 100; //Percentual organicas
+   result2 = (result1 / result) * 100; //Percentual das curtidas organicas
    
   // QMessageBox::critical(this, "Erro!", "Operação Inválida!");
   //    return;
