@@ -28,27 +28,21 @@ void MainWindow::computeResult()
     // Read numbes from fields
     double num1 = ui->num1Edit->text().toDouble();//Ultima quantidade de curtidas
     double num2 = ui->num2Edit->text().toDouble();//Atual quantidade de curtidas
-	double num3 = ui->num3Edit->text().toDouble();//Quantidade de curtidas pagas
+    double num3 = ui->num3Edit->text().toDouble();//Quantidade de curtidas pagas
 
-    double result, result0, result1, result2;
-
-   result = num2 - num1; //Quantidade que aumentou
-   result0 = ((num2 / num1) - 1) * 100; //Percentual de aumento das curtidas
-   result1 = result - num3; //Curtidas Organicas
-   result2 = (result1 / result) * 100; //Percentual das curtidas organicas
-   
-  // QMessageBox::critical(this, "Erro!", "Operação Inválida!");
-  //    return;
-    
+    double result = num2 - num1; //Quantidade que aumentou
+    double result0 = ((num2 / num1) - 1) * 100; //Percentual de aumento das curtidas
+    double result1 = result - num3; //Curtidas Organicas
+    double result2 = (result1 / result) * 100; //Percentual das curtidas organicas
 
     QString msg = QString("Aumentou: %0 Curtidas" "\n"
-		"Percentual de aumento: %1%" "\n"
-		"Quantidade de curtidas Orgânicas: %2" "\n"
-		"Percentual de curtidas orgânicas: %3%").arg(
-		QString::number(result),
-		QString::number(result0, 'f', 1),
-		QString::number(result1),
-		QString::number(result2, 'f', 1));
+        "Percentual de aumento: %1%" "\n"
+        "Quantidade de curtidas Orgânicas: %2" "\n"
+        "Percentual de curtidas orgânicas: %3%").arg(
+        QString::number(result),
+        QString::number(result0, 'f', 1),
+        QString::number(result1),
+        QString::number(result2, 'f', 1));
 
 
     // Show message box with result
