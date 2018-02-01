@@ -6,6 +6,7 @@ set(MACOSX_BUNDLE_BUNDLE_NAME Cadastro)
 
 set(CADASTRO_INCLUDE
     MainWindow.h
+    Contact.h
     ContactInfo.h
 )
 

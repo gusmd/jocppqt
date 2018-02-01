@@ -18,21 +18,21 @@
     <item row="0" column="0">
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="2" column="0">
-       <widget class="QPushButton" name="AddButton">
+       <widget class="QPushButton" name="addButton">
         <property name="text">
          <string>Add</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QPushButton" name="ListButton">
+       <widget class="QPushButton" name="deleteButton">
         <property name="text">
-         <string>List</string>
+         <string>Delete</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0" colspan="2">
-       <widget class="QListView" name="listView"/>
+       <widget class="QListWidget" name="listWidget"/>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
