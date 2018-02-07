@@ -5,6 +5,8 @@
 
 #include "Contact.h"
 
+class QListWidgetItem;
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,6 +22,11 @@ public:
 private slots:
     void addContact();
     void deleteContact();
+    void editContactOnClick(QListWidgetItem *item);
+
+    void storeNewContactList(const QList<Contact> contacts);
+
+    void populateContactsFromJson();
 
 private:
     void updateContactList();

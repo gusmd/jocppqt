@@ -17,13 +17,23 @@ public:
     explicit ContactInfo(QWidget *parent = nullptr);
     ~ContactInfo();
 
-    QString getFName();
-    QString getLName();
-    QString getEmail();
-    QString getPhoneNumber();
-    QString getAddress();
+    QString getFName() const;
+    void setFName(const QString &name);
+    QString getLName() const;
+    void setLName(const QString &lastName);
+    QString getEmail() const;
+    void setEmail(const QString &email);
+    QString getPhoneNumber() const;
+    void setPhoneNumber(const QString &phone);
+    QString getAddress() const;
+    void setAddress(const QString &address);
+
 
     static Contact createNewContact(QWidget *parent = nullptr);
+    static Contact editContact(const Contact &contact, QWidget *parent = nullptr);
+
+private slots:
+    void processSaveClick();
 
 private:
     Ui::ContactInfo *ui;
