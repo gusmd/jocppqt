@@ -131,12 +131,6 @@
      </item>
      <item row="11" column="0" colspan="3">
       <widget class="QLineEdit" name="AddressEdit">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="cursor">
-        <cursorShape>WaitCursor</cursorShape>
-       </property>
       </widget>
      </item>
     </layout>
